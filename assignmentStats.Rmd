@@ -650,11 +650,7 @@ posterior_df <- data.frame(theta1 = theta1_accepted, theta2 = theta2_accepted)
 
 skim(posterior_df)
 head(posterior_df, 10)
-
-
-
 ```
-
 
 
 ## TASK 3.4: Plot the joint and marginal posterior distribution
@@ -680,13 +676,10 @@ marginal_theta2 <- ggplot(posterior_df, aes(x = theta2)) +
   labs(title = "Marginal Posterior for Theta2", x = "Theta2", y = "Density") +
   theme_minimal()
 
-
-
 # Combine Plots
 combined_plot <- (marginal_theta1 + marginal_theta2)
 combined_plot <- combined_plot + plot_annotation(title = "ABC Posterior and Data Distributions")
 combined_plot
-
 
 # Distribution of Data (X2)
 data_distribution <- ggplot(signals_df, aes(x = x2)) +
